@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Add A New Cafe{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h1>Add a new cafe into the database</h1>
+  <form method="POST" novalidate>
+    {{ form.hidden_tag() }}
+    <p>{{ form.cafe.label }} {{ form.cafe() }}</p>
+    <p>{{ form.location.label }} {{ form.location() }}</p>
+    <p>{{ form.open.label }} {{ form.open() }}</p>
+    <p>{{ form.close.label }} {{ form.close() }}</p>
+    <p>{{ form.coffee_rating.label }} {{ form.coffee_rating() }}</p>
+    <p>{{ form.wifi_rating.label }} {{ form.wifi_rating() }}</p>
+    <p>{{ form.power_rating.label }} {{ form.power_rating() }}</p>
+    <p>{{ form.submit() }}</p>
+  </form>
+  <p class="space-above">
+    <a href="{{ url_for('cafes') }}">See all cafes</a>
+  </p>
+</div>
+{% endblock %}
